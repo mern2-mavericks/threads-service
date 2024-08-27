@@ -1,0 +1,28 @@
+### GET ALL THREADS
+GET http://localhost:8000/threads
+
+
+### CREATE THREADS
+POST http://localhost:8000/threads
+Content-Type: application/json
+
+{
+    "userId": "66b636424b1aba8d8707df4b",
+    "title": "jawirscript",
+    "content": "JavaScifi"
+}
+
+### GET ONE THREADS
+GET http://localhost:8000/threads/66cc239b3c1bc55ca1e7179f
+
+### UPDATE THREADS
+PATCH http://localhost:8000/threads/66ca78885eae7a943d6a7d2b
+Content-Type: application/json
+
+{
+    "content": "jawirscript"
+}
+
+
+### DELETE THREADS
+DELETE http://localhost:8000/threads/66cc68ccb08c128492039145
