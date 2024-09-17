@@ -1,0 +1,5 @@
+api-gateway/node_modules
+api-gateway/dist
+.env*
+threads/node_modules
+threads/dist

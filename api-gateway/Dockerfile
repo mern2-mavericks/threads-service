@@ -14,6 +14,6 @@ RUN pnpm i
 RUN tsc
 
 
-EXPOSE 8001
+EXPOSE 8010
 
 CMD [ "pnpm" ,"start" ]

@@ -1,17 +1,14 @@
 import express from "express";
-import { mongooseConnect } from "./utils/mongoose";
+import {mongooseConnect} from "./utils/mongoose";
 import dotenv from "dotenv";
-import { threadsRouter } from "./routes/threads.route";
+import {threadsRouter} from "./routes/threads.route";
+import {env} from "./utils/env";
 
- 
 dotenv.config();
-
 const app = express();
-app.use(express.json());
-
 mongooseConnect();
+app.use(express.json());
 
 app.use("/threads", threadsRouter);
 
-
-app.listen(8000)
+app.listen(env.PORT, () => console.log(`running on port ${env.PORT}`));

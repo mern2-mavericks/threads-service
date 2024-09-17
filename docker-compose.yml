@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8010:8010"
+   
+  threads:
+    build: ./threads
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./threads/.env
+    depends_on:
+      - mongo-threads
+  
+  mongo-threads:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-threads:/data/db
+
+volumes:
+  mongo-threads:
